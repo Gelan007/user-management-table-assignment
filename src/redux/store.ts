@@ -1,8 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {useDispatch} from "react-redux";
+import usersSlice from "./slices/users-slice";
 
 export const store = configureStore({
     reducer: {
+        users: usersSlice
     },
     devTools: true
 })
