@@ -20,10 +20,10 @@ const UsersTable = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell sx={{ fontWeight: 'bold' }}>Name</TableCell>
-                        <TableCell align="right" sx={{ fontWeight: 'bold' }}>Username</TableCell>
-                        <TableCell align="right" sx={{ fontWeight: 'bold' }}>Email</TableCell>
-                        <TableCell align="right" sx={{ fontWeight: 'bold' }}>Phone</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold', fontSize: '17px' }}>Name</TableCell>
+                        <TableCell align="left" sx={{ fontWeight: 'bold', fontSize: '17px' }}>Username</TableCell>
+                        <TableCell align="left" sx={{ fontWeight: 'bold', fontSize: '17px' }}>Email</TableCell>
+                        <TableCell align="left" sx={{ fontWeight: 'bold', fontSize: '17px' }}>Phone</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>
@@ -74,12 +74,12 @@ const UsersTable = () => {
                             key={user.id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                            <TableCell component="th" scope="row">
+                            <TableCell component="th" scope="row" sx={{fontSize: '15px'}}>
                                 {user.name}
                             </TableCell>
-                            <TableCell align="right">{user.username}</TableCell>
-                            <TableCell align="right">{user.email}</TableCell>
-                            <TableCell align="right">{user.phone}</TableCell>
+                            <TableCell align="left" sx={{fontSize: '15px'}}>{user.username}</TableCell>
+                            <TableCell align="left" sx={{fontSize: '15px'}}>{user.email}</TableCell>
+                            <TableCell align="left" sx={{fontSize: '15px'}}>{user.phone}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
