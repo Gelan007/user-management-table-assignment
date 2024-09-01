@@ -1,6 +1,7 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {usersAPI} from "../../api/users";
 import {User} from "../../interfaces/User";
+import {FilterFields} from "../../interfaces/FilterFields";
 
 export const getUsers = createAsyncThunk(
     'users/getUsers',
@@ -17,7 +18,14 @@ export const getUsers = createAsyncThunk(
 const initialState = {
     isLoading: false,
     error: "" as string | null,
-    users: [] as User[]
+    users: [] as User[],
+    filteredUsers: [] as User[],
+    filters: {
+        name: '',
+        username: '',
+        email: '',
+        phone: ''
+    } as FilterFields
 }
 export type UsersInitialStateType = typeof initialState
 
@@ -25,6 +33,12 @@ const usersSlice = createSlice({
     name: "users",
     initialState,
     reducers: {
+        setFilteredUsers: (state, action: PayloadAction<User[]>) => {
+            state.filteredUsers = action.payload;
+        },
+        setFilters: (state, action: PayloadAction<FilterFields>) => {
+            state.filters = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -44,5 +58,7 @@ const usersSlice = createSlice({
 })
 
 export const {
+    setFilteredUsers,
+    setFilters
 } = usersSlice.actions;
 export default usersSlice.reducer;
