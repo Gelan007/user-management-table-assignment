@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/user-management-table-assignment/static/css/main.1cdfb727.css",
+    "main.js": "/user-management-table-assignment/static/js/main.c1816050.js",
+    "index.html": "/user-management-table-assignment/index.html",
+    "main.1cdfb727.css.map": "/user-management-table-assignment/static/css/main.1cdfb727.css.map",
+    "main.c1816050.js.map": "/user-management-table-assignment/static/js/main.c1816050.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1cdfb727.css",
+    "static/js/main.c1816050.js"
+  ]
+}
